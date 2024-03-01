@@ -1,9 +1,9 @@
 # EXPERIMENT-NO--03-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resistor
 
-# DATE :
-# NAME :
-# ROLLNUMBER :
-# DEPARTMENT
+## DATE : 01/03/2024
+## NAME :PRASANNA R
+## ROLLNUMBER : 212221220039
+## DEPARTMENT : IT
 ## AIM: 
 To interface an FSR(force sensitive resistor) and scale the output voltage obtained to pressure applied 
  
@@ -63,6 +63,7 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 ### FIGURE-03 CIRCUIT DIAGRAM
 
+<img width="659" alt="Screenshot 2024-03-01 220653" src="https://github.com/Prasanna-936/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/130341982/6795a58f-5f38-4f9f-89b9-ec903124eb57">
 
 
 ### PROCEDURE:
@@ -79,26 +80,46 @@ The easiest way to measure a resistive sensor is to connect one end to power and
 
 
 ### PROGRAM 
- *your roll no 
- * your name 
- * department and year 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ 212221220039
+ PRASANNA . R
+ IT- 3rd YEAR
 
-![image](https://user-images.githubusercontent.com/36288975/188804653-a3154e8e-2655-46f2-9dcd-f425dd1ba109.png)
+```
+int led=7;
+int fsr;
+
+void setup()
+{
+  pinMode(led, OUTPUT);
+  Serial.begin(9600);
+}
+void loop()
+{
+  fsr=analogRead(A0);
+  Serial.print("raw value=");
+  Serial.println(fsr);
+  delay(500);
+  int m;
+  m=map(fsr,0,159,0,10);
+  Serial.print("mapped value=");
+  Serial.println(m);
+  
+  if(fsr>50)
+  {
+    digitalWrite(led,LOW);
+    delay(500);
+    digitalWrite(led,HIGH);
+    delay(500);
+  }
+}
+```
+
+
+ <img width="542" alt="Screenshot 2024-03-01 214843" src="https://github.com/Prasanna-936/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/130341982/f6b94ea6-7ccf-4108-8781-3fc922d6d0dd">
+
+<img width="614" alt="Screenshot 2024-03-01 214730" src="https://github.com/Prasanna-936/EXPERIMENT-NO--04-PRESSURE-MEASUREMENT-USING-ARDUINO-AIM-To-interface-an-FSR-force-sensitive-resist/assets/130341982/19ca6a89-bb84-4d98-b63d-2fb013c02cfa">
+
+ 
 
 
 ### TABLE -02 standard deviation table 
